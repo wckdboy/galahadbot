@@ -100,7 +100,8 @@ tools/
 python tools/gen_urdf.py
 ```
 
-**View it in ROS 2** (Jazzy):
+**View it in ROS 2** (Jazzy) — *not yet executed: no ROS 2 install on the build
+machine, so this path is written but unverified*:
 
 ```bash
 colcon build --packages-select galahad_description

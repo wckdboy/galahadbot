@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+  Galahad xacro wrapper.
+
+  The parametric values that matter for kinematics live here as properties; the
+  link/joint tree itself is generated from the Blender rig by tools/gen_urdf.py
+  so CAD and ROS cannot drift apart silently.
+
+  Regenerate with:  python tools/gen_urdf.py
+-->
+<robot name="galahad" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="parked_height_mm" value="240"/>
+  <xacro:property name="parked_width_mm" value="195"/>
+  <xacro:property name="parked_depth_mm" value="186"/>
+  <xacro:property name="track_separation_mm" value="110"/>
+  <xacro:property name="sprocket_radius_mm" value="19.5"/>
+
+  <xacro:include filename="galahad.urdf"/>
+
+</robot>

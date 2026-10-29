@@ -1,0 +1,36 @@
+# Blender
+*.blend1
+*.blend2
+blender/_ref_only.blend
+
+# Exports that can be regenerated from the .blend
+*.fbx
+*.obj
+
+# Scratch renders
+renders/wip_*
+renders/*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ROS 2
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Source artwork is not redistributed (see LICENSE)
+reference/
+

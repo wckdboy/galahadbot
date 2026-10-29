@@ -1,0 +1,1222 @@
+{
+  "units": "mm",
+  "joints": [
+    {
+      "name": "base_link",
+      "head_mm": [
+        0.0,
+        0.0,
+        22.0
+      ],
+      "tail_mm": [
+        0.0,
+        0.0,
+        46.0
+      ],
+      "parent": null,
+      "length_mm": 24.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          -70.44,
+          -93.07,
+          -8.0
+        ],
+        "max": [
+          70.43,
+          93.07,
+          75.24
+        ],
+        "size": [
+          140.87,
+          186.14,
+          83.24
+        ]
+      }
+    },
+    {
+      "name": "waist_yaw",
+      "head_mm": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "tail_mm": [
+        0.0,
+        0.0,
+        92.0
+      ],
+      "parent": "base_link",
+      "length_mm": 12.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          -29.38,
+          -33.64,
+          74.5
+        ],
+        "max": [
+          29.41,
+          23.49,
+          107.52
+        ],
+        "size": [
+          58.79,
+          57.13,
+          33.02
+        ]
+      }
+    },
+    {
+      "name": "waist_pitch",
+      "head_mm": [
+        0.0,
+        -4.0,
+        92.0
+      ],
+      "tail_mm": [
+        0.0,
+        -4.0,
+        112.0
+      ],
+      "parent": "waist_yaw",
+      "length_mm": 20.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "torso",
+      "head_mm": [
+        0.0,
+        -4.0,
+        112.0
+      ],
+      "tail_mm": [
+        0.0,
+        -4.0,
+        176.0
+      ],
+      "parent": "waist_pitch",
+      "length_mm": 64.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          -41.6,
+          -36.95,
+          84.05
+        ],
+        "max": [
+          41.87,
+          26.85,
+          199.22
+        ],
+        "size": [
+          83.47,
+          63.8,
+          115.18
+        ]
+      }
+    },
+    {
+      "name": "head_pan",
+      "head_mm": [
+        0.0,
+        -2.0,
+        186.0
+      ],
+      "tail_mm": [
+        0.0,
+        -2.0,
+        200.0
+      ],
+      "parent": "torso",
+      "length_mm": 14.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "head_tilt",
+      "head_mm": [
+        0.0,
+        -2.0,
+        200.0
+      ],
+      "tail_mm": [
+        0.0,
+        -2.0,
+        214.0
+      ],
+      "parent": "head_pan",
+      "length_mm": 14.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          -39.28,
+          -53.03,
+          -14.0
+        ],
+        "max": [
+          39.19,
+          14.0,
+          240.0
+        ],
+        "size": [
+          78.47,
+          67.03,
+          254.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_yaw_L",
+      "head_mm": [
+        -26.0,
+        -4.0,
+        168.0
+      ],
+      "tail_mm": [
+        -42.0,
+        -4.0,
+        168.0
+      ],
+      "parent": "torso",
+      "length_mm": 16.0,
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "shoulder_pitch_L",
+      "head_mm": [
+        -52.0,
+        -4.0,
+        168.0
+      ],
+      "tail_mm": [
+        -63.0,
+        -4.0,
+        148.0
+      ],
+      "parent": "shoulder_yaw_L",
+      "length_mm": 22.83,
+      "axis": [
+        -0.482,
+        0.0,
+        -0.876
+      ],
+      "bbox_mm": {
+        "min": [
+          -83.6,
+          -28.77,
+          126.07
+        ],
+        "max": [
+          -14.61,
+          9.63,
+          196.15
+        ],
+        "size": [
+          68.98,
+          38.4,
+          70.08
+        ]
+      }
+    },
+    {
+      "name": "elbow_L",
+      "head_mm": [
+        -70.0,
+        -6.0,
+        122.0
+      ],
+      "tail_mm": [
+        -76.0,
+        -6.0,
+        104.0
+      ],
+      "parent": "shoulder_pitch_L",
+      "length_mm": 18.97,
+      "axis": [
+        -0.316,
+        0.0,
+        -0.949
+      ],
+      "bbox_mm": {
+        "min": [
+          -92.42,
+          -33.07,
+          101.61
+        ],
+        "max": [
+          -52.35,
+          -7.18,
+          134.21
+        ],
+        "size": [
+          40.07,
+          25.89,
+          32.6
+        ]
+      }
+    },
+    {
+      "name": "wrist_L",
+      "head_mm": [
+        -80.0,
+        -8.0,
+        96.0
+      ],
+      "tail_mm": [
+        -82.0,
+        -10.0,
+        84.0
+      ],
+      "parent": "elbow_L",
+      "length_mm": 12.33,
+      "axis": [
+        -0.162,
+        -0.162,
+        -0.973
+      ],
+      "bbox_mm": {
+        "min": [
+          -97.06,
+          -47.22,
+          74.02
+        ],
+        "max": [
+          -62.5,
+          -14.21,
+          112.1
+        ],
+        "size": [
+          34.56,
+          33.02,
+          38.08
+        ]
+      }
+    },
+    {
+      "name": "gripper_L",
+      "head_mm": [
+        -83.0,
+        -12.0,
+        76.0
+      ],
+      "tail_mm": [
+        -83.0,
+        -12.0,
+        52.0
+      ],
+      "parent": "wrist_L",
+      "length_mm": 24.0,
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          -97.32,
+          -53.08,
+          50.54
+        ],
+        "max": [
+          -70.48,
+          -27.5,
+          82.68
+        ],
+        "size": [
+          26.84,
+          25.58,
+          32.14
+        ]
+      }
+    },
+    {
+      "name": "shoulder_yaw_R",
+      "head_mm": [
+        26.0,
+        -4.0,
+        168.0
+      ],
+      "tail_mm": [
+        42.0,
+        -4.0,
+        168.0
+      ],
+      "parent": "torso",
+      "length_mm": 16.0,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "shoulder_pitch_R",
+      "head_mm": [
+        52.0,
+        -4.0,
+        168.0
+      ],
+      "tail_mm": [
+        63.0,
+        -4.0,
+        148.0
+      ],
+      "parent": "shoulder_yaw_R",
+      "length_mm": 22.83,
+      "axis": [
+        0.482,
+        0.0,
+        -0.876
+      ],
+      "bbox_mm": {
+        "min": [
+          14.65,
+          -31.74,
+          105.42
+        ],
+        "max": [
+          83.67,
+          8.01,
+          196.05
+        ],
+        "size": [
+          69.02,
+          39.75,
+          90.64
+        ]
+      }
+    },
+    {
+      "name": "elbow_R",
+      "head_mm": [
+        70.0,
+        -6.0,
+        122.0
+      ],
+      "tail_mm": [
+        76.0,
+        -6.0,
+        104.0
+      ],
+      "parent": "shoulder_pitch_R",
+      "length_mm": 18.97,
+      "axis": [
+        0.316,
+        0.0,
+        -0.949
+      ],
+      "bbox_mm": {
+        "min": [
+          52.35,
+          -45.59,
+          77.83
+        ],
+        "max": [
+          97.09,
+          -3.8,
+          128.56
+        ],
+        "size": [
+          44.73,
+          41.79,
+          50.73
+        ]
+      }
+    },
+    {
+      "name": "wrist_R",
+      "head_mm": [
+        80.0,
+        -8.0,
+        96.0
+      ],
+      "tail_mm": [
+        82.0,
+        -10.0,
+        84.0
+      ],
+      "parent": "elbow_R",
+      "length_mm": 12.33,
+      "axis": [
+        0.162,
+        -0.162,
+        -0.973
+      ],
+      "bbox_mm": {
+        "min": [
+          68.46,
+          -47.26,
+          73.95
+        ],
+        "max": [
+          90.97,
+          -15.46,
+          104.75
+        ],
+        "size": [
+          22.52,
+          31.8,
+          30.8
+        ]
+      }
+    },
+    {
+      "name": "gripper_R",
+      "head_mm": [
+        83.0,
+        -12.0,
+        76.0
+      ],
+      "tail_mm": [
+        83.0,
+        -12.0,
+        52.0
+      ],
+      "parent": "wrist_R",
+      "length_mm": 24.0,
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "bbox_mm": {
+        "min": [
+          70.4,
+          -55.13,
+          50.46
+        ],
+        "max": [
+          97.32,
+          -27.65,
+          83.17
+        ],
+        "size": [
+          26.92,
+          27.48,
+          32.7
+        ]
+      }
+    },
+    {
+      "name": "tread_L",
+      "head_mm": [
+        0.0,
+        -12.0,
+        25.0
+      ],
+      "tail_mm": [
+        0.0,
+        12.0,
+        25.0
+      ],
+      "parent": "base_link",
+      "length_mm": 24.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "tread_R",
+      "head_mm": [
+        0.0,
+        -12.0,
+        25.0
+      ],
+      "tail_mm": [
+        0.0,
+        12.0,
+        25.0
+      ],
+      "parent": "base_link",
+      "length_mm": 24.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "tread_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 116978,
+      "material": "GLD_TreadRubber"
+    },
+    {
+      "name": "tread_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 121242,
+      "material": "GLD_TreadRubber"
+    },
+    {
+      "name": "base_deck",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 73130,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "drive_motor_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 39296,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "base_front_cap",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 35874,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "base_side_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 29212,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "wheel_rear_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 24366,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "drive_motor_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 25592,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "base_bracket_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 22468,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "wheel_rear_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 17138,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "base_frame",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 51970,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "base_side_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 35060,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "battery_A",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 25582,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "bumper_front",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 18834,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "battery_B",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 14674,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_rear_lower",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 14838,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_rear_corner_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 14368,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "base_rear_corner_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 10458,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "battery_A_latch",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 9384,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_skirt_front",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 9626,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_rear_panel",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 8362,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_deck_rear_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 8082,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "base_bracket_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 7246,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_front_trim",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 5978,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "skid_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 5844,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "battery_B_latch",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 5402,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "skid_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 5754,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "tof_front_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 4408,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "tof_front_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 4298,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "base_rear_trim_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 4082,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "battery_A_handle",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 3856,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "battery_B_handle",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 3560,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "base_mount_front_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 3536,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "battery_tab_1",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 3224,
+      "material": "GLD_LatchOrange"
+    },
+    {
+      "name": "base_mount_rear_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 3142,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "battery_tab_2",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 2720,
+      "material": "GLD_LatchOrange"
+    },
+    {
+      "name": "battery_tab_3",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 2666,
+      "material": "GLD_LatchOrange"
+    },
+    {
+      "name": "battery_stop",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 2312,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "tof_front_trim",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 1954,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "wheel_hub_front_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 144,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "wheel_hub_front_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 144,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "wheel_hub_rear_L",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 144,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "wheel_hub_rear_R",
+      "collection": "01_BASE",
+      "bone": "base_link",
+      "tris": 144,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "waist_turntable",
+      "collection": "02_WAIST",
+      "bone": "waist_yaw",
+      "tris": 31521,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "waist_block_L",
+      "collection": "02_WAIST",
+      "bone": "waist_yaw",
+      "tris": 15010,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "waist_block_R",
+      "collection": "02_WAIST",
+      "bone": "waist_yaw",
+      "tris": 8514,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "waist_service_L",
+      "collection": "02_WAIST",
+      "bone": "waist_yaw",
+      "tris": 7128,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "waist_service_R",
+      "collection": "02_WAIST",
+      "bone": "waist_yaw",
+      "tris": 6554,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "torso_shell",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 124926,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "neck_base",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 49198,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "torso_back_panel",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 36124,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "torso_side_panel_R",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 20694,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "torso_side_L",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 15837,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "chest_speaker",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 11619,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "torso_front_plate",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 34920,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "torso_compute_bay",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 15370,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "torso_side_R",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 11301,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "torso_side_low_R",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 8768,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "torso_side_low_L",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 6944,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "torso_pcb_edge",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 5384,
+      "material": "GLD_NavyDeep"
+    },
+    {
+      "name": "chest_screen_bezel",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 5090,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "neck_ring",
+      "collection": "03_TORSO",
+      "bone": "torso",
+      "tris": 3404,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "head_shell",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 92381,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "head_side_plate_L",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 7208,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "head_side_plate_R",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 8332,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "head_sensor_bar",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 11810,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "head_side_R",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 10774,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "head_lens_ring",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 4971,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "head_back_trim",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 4598,
+      "material": "GLD_Navy"
+    },
+    {
+      "name": "head_lens",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 3570,
+      "material": "GLD_LensGlass"
+    },
+    {
+      "name": "head_ir_window",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 2244,
+      "material": "GLD_LensGlass"
+    },
+    {
+      "name": "head_brass_disc_L",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 192,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "head_brass_disc_R",
+      "collection": "04_HEAD",
+      "bone": "head_tilt",
+      "tris": 192,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "gripper_L",
+      "collection": "05_ARM_L",
+      "bone": "gripper_L",
+      "tris": 60190,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "wrist_cuff_L",
+      "collection": "05_ARM_L",
+      "bone": "wrist_L",
+      "tris": 28666,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "elbow_disc_L",
+      "collection": "05_ARM_L",
+      "bone": "elbow_L",
+      "tris": 10382,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "shoulder_joint_L",
+      "collection": "05_ARM_L",
+      "bone": "shoulder_pitch_L",
+      "tris": 10014,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "upperarm_inner_L",
+      "collection": "05_ARM_L",
+      "bone": "shoulder_pitch_L",
+      "tris": 39268,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "upperarm_L",
+      "collection": "05_ARM_L",
+      "bone": "shoulder_pitch_L",
+      "tris": 33390,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "shoulder_L",
+      "collection": "05_ARM_L",
+      "bone": "shoulder_pitch_L",
+      "tris": 32082,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "elbow_housing_L",
+      "collection": "05_ARM_L",
+      "bone": "elbow_L",
+      "tris": 11712,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "forearm_L",
+      "collection": "05_ARM_L",
+      "bone": "elbow_L",
+      "tris": 10586,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "forearm_inner_L",
+      "collection": "05_ARM_L",
+      "bone": "elbow_L",
+      "tris": 9900,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "wrist_joint_L",
+      "collection": "05_ARM_L",
+      "bone": "wrist_L",
+      "tris": 8356,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "wrist_disc_L",
+      "collection": "05_ARM_L",
+      "bone": "wrist_L",
+      "tris": 6390,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "shoulder_disc_L",
+      "collection": "05_ARM_L",
+      "bone": "shoulder_pitch_L",
+      "tris": 2954,
+      "material": "GLD_Brass"
+    },
+    {
+      "name": "shoulder_R",
+      "collection": "06_ARM_R",
+      "bone": "shoulder_pitch_R",
+      "tris": 42250,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "elbow_housing_R",
+      "collection": "06_ARM_R",
+      "bone": "elbow_R",
+      "tris": 53451,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "upperarm_inner_R",
+      "collection": "06_ARM_R",
+      "bone": "shoulder_pitch_R",
+      "tris": 31870,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "upperarm_R",
+      "collection": "06_ARM_R",
+      "bone": "shoulder_pitch_R",
+      "tris": 46900,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "gripper_R",
+      "collection": "06_ARM_R",
+      "bone": "gripper_R",
+      "tris": 58608,
+      "material": "GLD_Graphite"
+    },
+    {
+      "name": "forearm_R",
+      "collection": "06_ARM_R",
+      "bone": "shoulder_pitch_R",
+      "tris": 18540,
+      "material": "GLD_Ivory"
+    },
+    {
+      "name": "shoulder_joint_R",
+      "collection": "06_ARM_R",
+      "bone": "wrist_R",
+      "tris": 14370,
+      "material": "GLD_Graphite"
+    }
+  ]
+}

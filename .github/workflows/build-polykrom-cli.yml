@@ -1,22 +1,23 @@
 name: Build polykrom-cli
 
-# Builds WCKDai/polykrom's headless CLI on a clean Windows runner and uploads it.
+# Builds WCKDai/polykrom's headless CLI and uploads a Windows binary.
 # Local builds are blocked by an endpoint AV filter that quarantines freshly
-# linked build-script binaries (os error 225 / ERROR_VIRUS_INFECTED).
+# linked build-script binaries (os error 225 / ERROR_VIRUS_INFECTED), so the
+# binary is produced on a clean runner and downloaded.
 on:
-  push:
-    paths:
-      - '.github/workflows/build-polykrom-cli.yml'
   workflow_dispatch:
     inputs:
       ref:
         description: polykrom ref to build
         required: false
         default: main
+  push:
+    paths:
+      - '.github/workflows/build-polykrom-cli.yml'
 
 jobs:
-  windows:
-    runs-on: windows-latest
+  windows-cross:
+    runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - name: Check out polykrom
@@ -26,30 +27,36 @@ jobs:
           ref: ${{ github.event.inputs.ref || 'main' }}
           path: polykrom
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+      - name: Install Rust and the Windows target
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add x86_64-pc-windows-gnu
+
+      - name: Install MinGW linker
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gcc-mingw-w64-x86-64
 
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: polykrom -> target
+          key: win-gnu
 
       - name: Build polykrom-cli
         working-directory: polykrom
-        run: cargo build --release -p solidcraft-cli --bin polykrom-cli
+        run: cargo build --release --target x86_64-pc-windows-gnu -p solidcraft-cli --bin polykrom-cli
 
       - name: Report binary
         working-directory: polykrom
-        shell: pwsh
         run: |
-          $exe = "target/release/polykrom-cli.exe"
-          if (!(Test-Path $exe)) { throw "polykrom-cli.exe was not produced" }
-          Get-Item $exe | Select-Object Name, @{n='MB';e={[math]::Round($_.Length/1MB,1)}}
-          & $exe --version
+          exe=target/x86_64-pc-windows-gnu/release/polykrom-cli.exe
+          test -f "$exe" || { echo "polykrom-cli.exe missing"; exit 1; }
+          ls -lh "$exe"
+          file "$exe"
 
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
           name: polykrom-cli-windows
-          path: polykrom/target/release/polykrom-cli.exe
+          path: polykrom/target/x86_64-pc-windows-gnu/release/polykrom-cli.exe
           retention-days: 7

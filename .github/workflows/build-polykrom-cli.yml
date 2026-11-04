@@ -1,0 +1,52 @@
+name: Build polykrom-cli
+
+# Builds WCKDai/polykrom's headless CLI on a clean Windows runner and uploads it.
+# Local builds are blocked by an endpoint AV filter that quarantines freshly
+# linked build-script binaries (os error 225 / ERROR_VIRUS_INFECTED).
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: polykrom ref to build
+        required: false
+        default: main
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out polykrom
+        uses: actions/checkout@v4
+        with:
+          repository: WCKDai/polykrom
+          ref: ${{ github.event.inputs.ref || 'main' }}
+          path: polykrom
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: polykrom -> target
+
+      - name: Build polykrom-cli
+        working-directory: polykrom
+        run: cargo build --release -p solidcraft-cli --bin polykrom-cli
+
+      - name: Report binary
+        working-directory: polykrom
+        shell: pwsh
+        run: |
+          $exe = "target/release/polykrom-cli.exe"
+          if (!(Test-Path $exe)) { throw "polykrom-cli.exe was not produced" }
+          Get-Item $exe | Select-Object Name, @{n='MB';e={[math]::Round($_.Length/1MB,1)}}
+          & $exe --version
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: polykrom-cli-windows
+          path: polykrom/target/release/polykrom-cli.exe
+          retention-days: 7

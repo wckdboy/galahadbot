@@ -4,6 +4,9 @@ name: Build polykrom-cli
 # Local builds are blocked by an endpoint AV filter that quarantines freshly
 # linked build-script binaries (os error 225 / ERROR_VIRUS_INFECTED).
 on:
+  push:
+    paths:
+      - '.github/workflows/build-polykrom-cli.yml'
   workflow_dispatch:
     inputs:
       ref:

@@ -1,0 +1,292 @@
+{
+  "model": "galahad.mjcf",
+  "physics": "MuJoCo 3.17.0",
+  "counts": {
+    "bodies": 19,
+    "joints": 17,
+    "actuators": 16,
+    "geoms": 19,
+    "meshes": 18
+  },
+  "total_mass_kg": 1.2592,
+  "timestep_s": 0.002,
+  "massless_bodies": [],
+  "joints": [
+    {
+      "name": "root",
+      "type": 0,
+      "limited": false,
+      "range_deg": null
+    },
+    {
+      "name": "tread_L_drive",
+      "type": 3,
+      "limited": false,
+      "range_deg": null
+    },
+    {
+      "name": "tread_R_drive",
+      "type": 3,
+      "limited": false,
+      "range_deg": null
+    },
+    {
+      "name": "waist_yaw",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -90.0,
+        90.0
+      ]
+    },
+    {
+      "name": "waist_pitch",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -20.0,
+        20.0
+      ]
+    },
+    {
+      "name": "head_pan",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -80.0,
+        80.0
+      ]
+    },
+    {
+      "name": "head_tilt",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -25.0,
+        35.0
+      ]
+    },
+    {
+      "name": "shoulder_yaw_L",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -80.0,
+        80.0
+      ]
+    },
+    {
+      "name": "shoulder_pitch_L",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -100.0,
+        95.0
+      ]
+    },
+    {
+      "name": "elbow_L",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -120.0,
+        90.0
+      ]
+    },
+    {
+      "name": "wrist_L",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -90.0,
+        90.0
+      ]
+    },
+    {
+      "name": "gripper_L",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        0.0,
+        45.0
+      ]
+    },
+    {
+      "name": "shoulder_yaw_R",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -80.0,
+        80.0
+      ]
+    },
+    {
+      "name": "shoulder_pitch_R",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -100.0,
+        95.0
+      ]
+    },
+    {
+      "name": "elbow_R",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -120.0,
+        90.0
+      ]
+    },
+    {
+      "name": "wrist_R",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        -90.0,
+        90.0
+      ]
+    },
+    {
+      "name": "gripper_R",
+      "type": 3,
+      "limited": true,
+      "range_deg": [
+        0.0,
+        45.0
+      ]
+    }
+  ],
+  "actuators": [
+    {
+      "name": "tread_L_drive",
+      "force_range_nm": [
+        -0.157,
+        0.157
+      ]
+    },
+    {
+      "name": "tread_R_drive",
+      "force_range_nm": [
+        -0.157,
+        0.157
+      ]
+    },
+    {
+      "name": "waist_yaw",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "waist_pitch",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "head_pan",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "head_tilt",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "shoulder_yaw_L",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "shoulder_pitch_L",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "elbow_L",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "wrist_L",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "gripper_L",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "shoulder_yaw_R",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "shoulder_pitch_R",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "elbow_R",
+      "force_range_nm": [
+        -0.93,
+        0.93
+      ]
+    },
+    {
+      "name": "wrist_R",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "gripper_R",
+      "force_range_nm": [
+        -0.52,
+        0.52
+      ]
+    }
+  ],
+  "settle": {
+    "duration_s": 2.0,
+    "base_height_mm": -1.75,
+    "height_change_mm": -1.75,
+    "tilt_deg": 2.22,
+    "ncon": 10,
+    "max_contact_force_n": 0.39
+  },
+  "roll": {
+    "duration_s": 2.0,
+    "forward_mm": 9.52,
+    "tilt_deg": 2.31,
+    "tread_angle_deg": [
+      18.9,
+      98.7
+    ]
+  },
+  "result": "pass"
+}

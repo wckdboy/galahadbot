@@ -1,0 +1,1680 @@
+{
+ "commands": [
+  {
+   "command": "file.new",
+   "params": {}
+  },
+  {
+   "command": "document.units",
+   "params": {
+    "units": "mm"
+   }
+  },
+  {
+   "command": "component.rename",
+   "params": {
+    "component": 0,
+    "name": "base"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Ivory",
+    "density_g_cm3": 0.4,
+    "color": "#EDE4D1"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Navy",
+    "density_g_cm3": 0.4,
+    "color": "#2A3346"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Graphite",
+    "density_g_cm3": 0.6,
+    "color": "#22252B"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Tread",
+    "density_g_cm3": 0.24,
+    "color": "#141518"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Battery",
+    "density_g_cm3": 1.92,
+    "color": "#3A4356"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Electronics",
+    "density_g_cm3": 1.9,
+    "color": "#2E6B45"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Brass",
+    "density_g_cm3": 1.05,
+    "color": "#C9A050"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Arm Shoulder",
+    "density_g_cm3": 1.1,
+    "color": "#EDE4D1"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Arm Upper",
+    "density_g_cm3": 3.0,
+    "color": "#EDE4D1"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Arm Lower",
+    "density_g_cm3": 3.8,
+    "color": "#EDE4D1"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Hand",
+    "density_g_cm3": 2.0,
+    "color": "#EDE4D1"
+   }
+  },
+  {
+   "command": "material.create",
+   "params": {
+    "name": "Galahad Jaw",
+    "density_g_cm3": 3.4,
+    "color": "#22252B"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 120.0,
+    "width": 88.0,
+    "height": 36.0,
+    "center": [
+     0,
+     0,
+     22.0
+    ],
+    "name": "chassis",
+    "body_name": "chassis"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 128.0,
+    "width": 88.0,
+    "height": 5.0,
+    "center": [
+     0,
+     0,
+     42.5
+    ],
+    "name": "deck",
+    "body_name": "deck"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 8,
+    "width": 76,
+    "height": 24,
+    "center": [
+     64.0,
+     0,
+     14
+    ],
+    "name": "bumper",
+    "body_name": "bumper"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 60.0,
+    "width": 30.0,
+    "height": 22.0,
+    "center": [
+     -34,
+     20,
+     26
+    ],
+    "name": "battery_A",
+    "body_name": "battery_A"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 60.0,
+    "width": 30.0,
+    "height": 22.0,
+    "center": [
+     -34,
+     -20,
+     26
+    ],
+    "name": "battery_B",
+    "body_name": "battery_B"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 50,
+    "height": 12,
+    "center": [
+     -20,
+     0,
+     46
+    ],
+    "name": "pcb_stack",
+    "body_name": "pcb_stack"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "rear_panel",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 6,
+    "width": 76,
+    "height": 26,
+    "center": [
+     -63.0,
+     0,
+     18
+    ],
+    "name": "rear_panel",
+    "body_name": "rear_panel"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "tread_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 85,
+    "width": 14.6,
+    "height": 39.0,
+    "center": [
+     0,
+     52.0,
+     19.5
+    ],
+    "name": "track_bar_L",
+    "body_name": "track_L"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 19.5,
+    "height": 14.6,
+    "base": [
+     -42.5,
+     52.0,
+     19.5
+    ],
+    "axis": "Y",
+    "name": "track_end_L_-42",
+    "body_name": "track_L",
+    "operation": "join",
+    "targets": [
+     "track_L"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 19.5,
+    "height": 14.6,
+    "base": [
+     42.5,
+     52.0,
+     19.5
+    ],
+    "axis": "Y",
+    "name": "track_end_L_42",
+    "body_name": "track_L",
+    "operation": "join",
+    "targets": [
+     "track_L"
+    ]
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "tread_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 85,
+    "width": 14.6,
+    "height": 39.0,
+    "center": [
+     0,
+     -52.0,
+     19.5
+    ],
+    "name": "track_bar_R",
+    "body_name": "track_R"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 19.5,
+    "height": 14.6,
+    "base": [
+     -42.5,
+     -52.0,
+     19.5
+    ],
+    "axis": "Y",
+    "name": "track_end_R_-42",
+    "body_name": "track_R",
+    "operation": "join",
+    "targets": [
+     "track_R"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 19.5,
+    "height": 14.6,
+    "base": [
+     42.5,
+     -52.0,
+     19.5
+    ],
+    "axis": "Y",
+    "name": "track_end_R_42",
+    "body_name": "track_R",
+    "operation": "join",
+    "targets": [
+     "track_R"
+    ]
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "waist",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 30.0,
+    "height": 13.0,
+    "base": [
+     0,
+     0,
+     45.0
+    ],
+    "axis": "Z",
+    "name": "turntable",
+    "body_name": "turntable"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 44,
+    "width": 44,
+    "height": 24,
+    "center": [
+     0,
+     0,
+     70.0
+    ],
+    "name": "waist_block",
+    "body_name": "waist_block"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "torso",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 100.0,
+    "width": 70.0,
+    "height": 102.0,
+    "center": [
+     0,
+     0,
+     133.0
+    ],
+    "name": "torso_shell",
+    "body_name": "torso_shell"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 4,
+    "width": 46,
+    "height": 38,
+    "center": [
+     52.0,
+     0,
+     146
+    ],
+    "name": "chest_screen",
+    "body_name": "chest_screen"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 4,
+    "width": 46,
+    "height": 24,
+    "center": [
+     52.0,
+     0,
+     112
+    ],
+    "name": "chest_speaker",
+    "body_name": "chest_speaker"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "neck",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 13.0,
+    "height": 14.0,
+    "base": [
+     0,
+     0,
+     184.0
+    ],
+    "axis": "Z",
+    "name": "neck_post",
+    "body_name": "neck_post"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "head",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 62.0,
+    "width": 96.0,
+    "height": 38.0,
+    "center": [
+     0,
+     0,
+     217.0
+    ],
+    "name": "head_shell",
+    "body_name": "head_shell"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 6,
+    "width": 84,
+    "height": 22,
+    "center": [
+     34.0,
+     0,
+     220
+    ],
+    "name": "visor",
+    "body_name": "visor"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 9,
+    "height": 5,
+    "base": [
+     36.0,
+     26,
+     220
+    ],
+    "axis": "X",
+    "name": "lens",
+    "body_name": "lens"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "shoulder_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 52,
+    "height": 24,
+    "center": [
+     0,
+     60,
+     170.0
+    ],
+    "name": "shoulder_bracket_L",
+    "body_name": "shoulder_bracket_L"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 26,
+    "width": 12,
+    "height": 26,
+    "center": [
+     0,
+     56.0,
+     170.0
+    ],
+    "name": "shoulder_pad_L",
+    "body_name": "shoulder_pad_L"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "upperarm_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 18,
+    "width": 18,
+    "height": 46,
+    "center": [
+     0,
+     78.0,
+     143.0
+    ],
+    "name": "upperarm_plate_L",
+    "body_name": "upperarm_plate_L"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "forearm_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 16,
+    "width": 14,
+    "height": 36,
+    "center": [
+     0,
+     78.0,
+     102.0
+    ],
+    "name": "forearm_plate_L",
+    "body_name": "forearm_plate_L"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "hand_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 22,
+    "width": 28,
+    "height": 24,
+    "center": [
+     0,
+     78.0,
+     72.0
+    ],
+    "name": "palm_L",
+    "body_name": "palm_L"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 10,
+    "height": 14,
+    "center": [
+     9,
+     78.0,
+     56.0
+    ],
+    "name": "finger_fixed_L",
+    "body_name": "finger_fixed_L"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "jaw_L",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 10,
+    "height": 14,
+    "center": [
+     -9,
+     78.0,
+     56.0
+    ],
+    "name": "finger_moving_L",
+    "body_name": "finger_moving_L"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "shoulder_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 52,
+    "height": 24,
+    "center": [
+     0,
+     -60,
+     170.0
+    ],
+    "name": "shoulder_bracket_R",
+    "body_name": "shoulder_bracket_R"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 26,
+    "width": 12,
+    "height": 26,
+    "center": [
+     0,
+     -56.0,
+     170.0
+    ],
+    "name": "shoulder_pad_R",
+    "body_name": "shoulder_pad_R"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "upperarm_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 18,
+    "width": 18,
+    "height": 46,
+    "center": [
+     0,
+     -78.0,
+     143.0
+    ],
+    "name": "upperarm_plate_R",
+    "body_name": "upperarm_plate_R"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "forearm_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 16,
+    "width": 14,
+    "height": 36,
+    "center": [
+     0,
+     -78.0,
+     102.0
+    ],
+    "name": "forearm_plate_R",
+    "body_name": "forearm_plate_R"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "hand_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 22,
+    "width": 28,
+    "height": 24,
+    "center": [
+     0,
+     -78.0,
+     72.0
+    ],
+    "name": "palm_R",
+    "body_name": "palm_R"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 10,
+    "height": 14,
+    "center": [
+     9,
+     -78.0,
+     56.0
+    ],
+    "name": "finger_fixed_R",
+    "body_name": "finger_fixed_R"
+   }
+  },
+  {
+   "command": "component.create",
+   "params": {
+    "name": "jaw_R",
+    "parent": 0,
+    "activate": true
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 10,
+    "height": 14,
+    "center": [
+     -9,
+     -78.0,
+     56.0
+    ],
+    "name": "finger_moving_R",
+    "body_name": "finger_moving_R"
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Ivory",
+    "bodies": [
+     "chassis",
+     "deck",
+     "torso_shell",
+     "head_shell"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Navy",
+    "bodies": [
+     "chest_speaker",
+     "rear_panel"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Graphite",
+    "bodies": [
+     "bumper",
+     "waist_block",
+     "visor",
+     "lens"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Tread",
+    "bodies": [
+     "track_L",
+     "track_R"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Battery",
+    "bodies": [
+     "battery_A",
+     "battery_B"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Electronics",
+    "bodies": [
+     "pcb_stack",
+     "chest_screen"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Brass",
+    "bodies": [
+     "turntable"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Shoulder",
+    "bodies": [
+     "shoulder_bracket_L",
+     "shoulder_pad_L"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Upper",
+    "bodies": [
+     "upperarm_plate_L"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Lower",
+    "bodies": [
+     "forearm_plate_L"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Hand",
+    "bodies": [
+     "palm_L",
+     "finger_fixed_L"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Jaw",
+    "bodies": [
+     "finger_moving_L"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Shoulder",
+    "bodies": [
+     "shoulder_bracket_R",
+     "shoulder_pad_R"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Upper",
+    "bodies": [
+     "upperarm_plate_R"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Arm Lower",
+    "bodies": [
+     "forearm_plate_R"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Hand",
+    "bodies": [
+     "palm_R",
+     "finger_fixed_R"
+    ]
+   }
+  },
+  {
+   "command": "material.assign",
+   "params": {
+    "material": "Galahad Jaw",
+    "bodies": [
+     "finger_moving_R"
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "rigid",
+    "a": {
+     "point": [
+      -63.0,
+      0,
+      18
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ],
+     "occurrence": 0
+    },
+    "b": {
+     "occurrence": "rear_panel",
+     "point": [
+      -63.0,
+      0,
+      18
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ]
+    },
+    "name": "rear_panel_weld",
+    "flip": true
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      42.5,
+      52.0,
+      19.5
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": 0
+    },
+    "b": {
+     "occurrence": "tread_L",
+     "point": [
+      42.5,
+      52.0,
+      19.5
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "tread_L_drive",
+    "flip": true
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      42.5,
+      -52.0,
+      19.5
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": 0
+    },
+    "b": {
+     "occurrence": "tread_R",
+     "point": [
+      42.5,
+      -52.0,
+      19.5
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "tread_R_drive",
+    "flip": true
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      0,
+      51.5
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ],
+     "occurrence": 0
+    },
+    "b": {
+     "occurrence": "waist",
+     "point": [
+      0,
+      0,
+      51.5
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "waist_yaw",
+    "flip": true,
+    "limits": [
+     [
+      -90,
+      90
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      0,
+      70.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "waist"
+    },
+    "b": {
+     "occurrence": "torso",
+     "point": [
+      0,
+      0,
+      70.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "waist_pitch",
+    "flip": true,
+    "limits": [
+     [
+      -20,
+      20
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      0,
+      191.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ],
+     "occurrence": "torso"
+    },
+    "b": {
+     "occurrence": "neck",
+     "point": [
+      0,
+      0,
+      191.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "head_pan",
+    "flip": true,
+    "limits": [
+     [
+      -80,
+      80
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      0,
+      200.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "neck"
+    },
+    "b": {
+     "occurrence": "head",
+     "point": [
+      0,
+      0,
+      200.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "head_tilt",
+    "flip": true,
+    "limits": [
+     [
+      -25,
+      35
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      46.0,
+      170.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ],
+     "occurrence": "torso"
+    },
+    "b": {
+     "occurrence": "shoulder_L",
+     "point": [
+      0,
+      46.0,
+      170.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "shoulder_yaw_L",
+    "flip": true,
+    "limits": [
+     [
+      -80,
+      80
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      78.0,
+      166.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "shoulder_L"
+    },
+    "b": {
+     "occurrence": "upperarm_L",
+     "point": [
+      0,
+      78.0,
+      166.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "shoulder_pitch_L",
+    "flip": true,
+    "limits": [
+     [
+      -100,
+      95
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      78.0,
+      120.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "upperarm_L"
+    },
+    "b": {
+     "occurrence": "forearm_L",
+     "point": [
+      0,
+      78.0,
+      120.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "elbow_L",
+    "flip": true,
+    "limits": [
+     [
+      -120,
+      90
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      78.0,
+      84.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "forearm_L"
+    },
+    "b": {
+     "occurrence": "hand_L",
+     "point": [
+      0,
+      78.0,
+      84.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "wrist_L",
+    "flip": true,
+    "limits": [
+     [
+      -90,
+      90
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      78.0,
+      60.0
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ],
+     "occurrence": "hand_L"
+    },
+    "b": {
+     "occurrence": "jaw_L",
+     "point": [
+      0,
+      78.0,
+      60.0
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ]
+    },
+    "name": "gripper_L",
+    "flip": true,
+    "limits": [
+     [
+      0,
+      45
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      -46.0,
+      170.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ],
+     "occurrence": "torso"
+    },
+    "b": {
+     "occurrence": "shoulder_R",
+     "point": [
+      0,
+      -46.0,
+      170.0
+     ],
+     "z": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "shoulder_yaw_R",
+    "flip": true,
+    "limits": [
+     [
+      -80,
+      80
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      -78.0,
+      166.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "shoulder_R"
+    },
+    "b": {
+     "occurrence": "upperarm_R",
+     "point": [
+      0,
+      -78.0,
+      166.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "shoulder_pitch_R",
+    "flip": true,
+    "limits": [
+     [
+      -100,
+      95
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      -78.0,
+      120.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "upperarm_R"
+    },
+    "b": {
+     "occurrence": "forearm_R",
+     "point": [
+      0,
+      -78.0,
+      120.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "elbow_R",
+    "flip": true,
+    "limits": [
+     [
+      -120,
+      90
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      -78.0,
+      84.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ],
+     "occurrence": "forearm_R"
+    },
+    "b": {
+     "occurrence": "hand_R",
+     "point": [
+      0,
+      -78.0,
+      84.0
+     ],
+     "z": [
+      0,
+      1,
+      0
+     ]
+    },
+    "name": "wrist_R",
+    "flip": true,
+    "limits": [
+     [
+      -90,
+      90
+     ]
+    ]
+   }
+  },
+  {
+   "command": "joint.create",
+   "params": {
+    "type": "revolute",
+    "a": {
+     "point": [
+      0,
+      -78.0,
+      60.0
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ],
+     "occurrence": "hand_R"
+    },
+    "b": {
+     "occurrence": "jaw_R",
+     "point": [
+      0,
+      -78.0,
+      60.0
+     ],
+     "z": [
+      1,
+      0,
+      0
+     ]
+    },
+    "name": "gripper_R",
+    "flip": true,
+    "limits": [
+     [
+      0,
+      45
+     ]
+    ]
+   }
+  },
+  {
+   "command": "file.save_as",
+   "params": {
+    "path": "design/galahad.polykrom"
+   }
+  },
+  {
+   "command": "file.export",
+   "params": {
+    "path": "design/galahad.mjcf",
+    "format": "mjcf",
+    "floating": true,
+    "effort": 1.0,
+    "actuated": [
+     "waist_yaw",
+     "waist_pitch",
+     "head_pan",
+     "head_tilt",
+     "shoulder_yaw_L",
+     "shoulder_pitch_L",
+     "elbow_L",
+     "wrist_L",
+     "gripper_L",
+     "shoulder_yaw_R",
+     "shoulder_pitch_R",
+     "elbow_R",
+     "wrist_R",
+     "gripper_R",
+     "tread_L_drive",
+     "tread_R_drive"
+    ]
+   }
+  },
+  {
+   "command": "file.export",
+   "params": {
+    "path": "design/galahad.urdf",
+    "format": "urdf",
+    "effort": 1.0,
+    "velocity": 3.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="galahad">
+  <compiler angle="radian" meshdir="." balanceinertia="true" />
+  <option integrator="implicitfast" />
+  <default>
+    <joint damping="0.1" armature="0.01" />
+  </default>
+  <asset>
+    <mesh name="galahad-base" file="galahad-base.stl" />
+    <mesh name="galahad-rear_panel" file="galahad-rear_panel.stl" />
+    <mesh name="galahad-tread_L" file="galahad-tread_L.stl" />
+    <mesh name="galahad-tread_R" file="galahad-tread_R.stl" />
+    <mesh name="galahad-waist" file="galahad-waist.stl" />
+    <mesh name="galahad-torso" file="galahad-torso.stl" />
+    <mesh name="galahad-neck" file="galahad-neck.stl" />
+    <mesh name="galahad-head" file="galahad-head.stl" />
+    <mesh name="galahad-shoulder_L" file="galahad-shoulder_L.stl" />
+    <mesh name="galahad-upperarm_L" file="galahad-upperarm_L.stl" />
+    <mesh name="galahad-forearm_L" file="galahad-forearm_L.stl" />
+    <mesh name="galahad-hand_L" file="galahad-hand_L.stl" />
+    <mesh name="galahad-jaw_L" file="galahad-jaw_L.stl" />
+    <mesh name="galahad-shoulder_R" file="galahad-shoulder_R.stl" />
+    <mesh name="galahad-upperarm_R" file="galahad-upperarm_R.stl" />
+    <mesh name="galahad-forearm_R" file="galahad-forearm_R.stl" />
+    <mesh name="galahad-hand_R" file="galahad-hand_R.stl" />
+    <mesh name="galahad-jaw_R" file="galahad-jaw_R.stl" />
+  </asset>
+  <worldbody>
+    <light name="sun" pos="0 0 3" dir="0 0 -1" directional="true" />
+    <geom name="floor" type="plane" size="0 0 0.05" rgba="0.8 0.8 0.8 1" />
+    <body name="base_link" pos="0 0 0" quat="1 0 0 0">
+      <freejoint name="root" />
+      <inertial pos="-0.014803559683337164 5.498723287641139e-19 0.028541766053046577" mass="0.4038111999999999" fullinertia="2.6178691825712243e-4 4.883571596682911e-4 6.332994552778354e-4 -7.300872063294368e-21 1.8889714683804695e-5 4.65342919199653e-21" />
+      <geom name="base_link" type="mesh" mesh="galahad-base" pos="0 0 0" quat="1 0 0 0" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+      <body name="rear_panel" pos="0 0 0" quat="1 0 0 0">
+        <inertial pos="-0.06299999999999999 -4.909553046007711e-18 0.017999999999999995" mass="0.004742399999999997" fullinertia="2.5498304e-6 2.8138240000001564e-7 2.296902400000014e-6 -1.1641532182693512e-22 1.4901161193847657e-21 2.0954757928848264e-22" />
+        <geom name="rear_panel" type="mesh" mesh="galahad-rear_panel" pos="0 0 0" quat="1 0 0 0" rgba="0.16470588743686676 0.20000000298023224 0.27450981736183167 1" />
+      </body>
+      <body name="tread_L" pos="0.0425 0.052000000000000005 0.0195" quat="0.5 -0.5 0.5 0.5">
+        <joint name="tread_L_drive" type="hinge" axis="0 0 1" ref="0" limited="false" />
+        <inertial pos="1.4210854715202006e-16 0.04250000000000064 0.0029868706632391806" mass="0.017889910575127364" fullinertia="2.099683528081824e-5 2.6723442072826335e-6 2.246121794013947e-5 1.983571537547267e-10 1.8596649169921873e-19 -9.25536224917331e-20" />
+        <geom name="tread_L" type="mesh" mesh="galahad-tread_L" pos="0.0195 0.0425 -0.052000000000000005" quat="-0.5 -0.5 0.5 0.5" rgba="0.0784313753247261 0.08235294371843338 0.0941176488995552 1" />
+      </body>
+      <body name="tread_R" pos="0.0425 -0.052000000000000005 0.0195" quat="0.5 -0.5 0.5 0.5">
+        <joint name="tread_R_drive" type="hinge" axis="0 0 1" ref="0" limited="false" />
+        <inertial pos="2.1316282072803006e-17 0.04250000000000026 0.002986870663239856" mass="0.017889910575127514" fullinertia="2.0996835280819033e-5 2.672344207282673e-6 2.2461217940140016e-5 1.9835715384860754e-10 2.5033950805664058e-20 -5.666993020413266e-20" />
+        <geom name="tread_R" type="mesh" mesh="galahad-tread_R" pos="0.0195 0.0425 0.052000000000000005" quat="-0.5 -0.5 0.5 0.5" rgba="0.0784313753247261 0.08235294371843338 0.0941176488995552 1" />
+      </body>
+      <body name="waist" pos="0 0 0.051500000000000004" quat="0.7071067811865476 0 0 0.7071067811865475">
+        <joint name="waist_yaw" type="hinge" axis="0 0 1" ref="0" range="-1.5707963267948966 1.5707963267948966" limited="true" />
+        <inertial pos="-7.287569506481156e-18 -1.7056714334742097e-18 0.007760045530499834" mass="0.06646229045602617" fullinertia="2.0597229686421967e-5 2.0597572062645504e-5 2.6353424140666185e-5 -4.769576444800809e-10 -5.2462771290834453e-20 -4.602560966388627e-21" />
+        <geom name="waist" type="mesh" mesh="galahad-waist" pos="0 0 -0.051500000000000004" quat="0.7071067811865476 0 0 -0.7071067811865475" rgba="0.7882353067398071 0.6274510025978088 0.3137255012989044 1" />
+        <body name="torso" pos="0 0 0.0185" quat="0.7071067811865476 0 0.7071067811865475 0">
+          <joint name="waist_pitch" type="hinge" axis="0 0 1" ref="0" range="-0.3490658503988659 0.3490658503988659" limited="true" />
+          <inertial pos="-0.06345104759269206 -0.002603223935244563 3.5816977510788134e-19" mass="0.3006512000000002" fullinertia="3.9595509584043745e-4 3.7153556767138807e-4 5.289426069784923e-4 -6.698598008589324e-6 1.5524888990535382e-20 1.978131227649141e-21" />
+          <geom name="torso" type="mesh" mesh="galahad-torso" pos="0.07 0 0" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+          <body name="neck" pos="-0.121 0 0" quat="0.7071067811865476 0 -0.7071067811865475 0">
+            <joint name="head_pan" type="hinge" axis="0 0 1" ref="0" range="-1.3962634015954636 1.3962634015954636" limited="true" />
+            <inertial pos="-2.112298549264712e-17 -1.745161247845762e-17 -5.996980689815245e-14" mass="0.009585333376661466" fullinertia="5.614055434165674e-7 5.614017617969776e-7 8.096864145629806e-7 5.268100540171245e-12 -2.2815484896897625e-20 -4.540461233658695e-20" />
+            <geom name="neck" type="mesh" mesh="galahad-neck" pos="0 0 -0.191" quat="0.7071067811865476 0 0 -0.7071067811865475" />
+            <body name="head" pos="0 0 0.009000000000000001" quat="0.7071067811865476 0 0.7071067811865475 0">
+              <joint name="head_tilt" type="hinge" axis="0 0 1" ref="0" range="-0.4363323129985824 0.6108652381980153" limited="true" />
+              <inertial pos="-0.017227283484584893 -0.002610964436817978 2.0271301472082098e-4" mass="0.09788638632585543" fullinertia="1.1107725313276045e-4 8.51525269488403e-5 4.8388870144773236e-5 -7.086449909540353e-7 5.5017910874618065e-8 7.121405509389468e-7" />
+              <geom name="head" type="mesh" mesh="galahad-head" pos="0.2 0 0" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+            </body>
+          </body>
+          <body name="shoulder_L" pos="-0.1 0 0.046" quat="0.7071067811865476 0 -0.7071067811865475 0">
+            <joint name="shoulder_yaw_L" type="hinge" axis="0 0 1" ref="0" range="-1.3962634015954636 1.3962634015954636" limited="true" />
+            <inertial pos="0.013287671232876708 -1.171343135405949e-18 2.336030912088001e-17" mass="0.05010720000000001" fullinertia="6.070979200000298e-6 1.1984058191781284e-5 1.3096026191780994e-5 -1.4308453048473067e-21 -1.722507215462216e-20 -3.318806799749534e-21" />
+            <geom name="shoulder_L" type="mesh" mesh="galahad-shoulder_L" pos="-0.046 0 -0.17" quat="0.7071067811865476 0 0 -0.7071067811865475" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+            <body name="upperarm_L" pos="0.032 0 -0.004" quat="0.7071067811865476 0 0.7071067811865475 0">
+              <joint name="shoulder_pitch_L" type="hinge" axis="0 0 1" ref="0" range="-1.7453292519943295 1.6580627893946132" limited="true" />
+              <inertial pos="0.022999999999999715 2.766400059069565e-18 9.947598300641403e-17" mass="0.04471199999999993" fullinertia="2.4144479999994636e-6 9.091439999996781e-6 9.091439999997318e-6 -5.114998202770982e-21 -9.834766387939454e-19 2.3137545213103406e-21" />
+              <geom name="upperarm_L" type="mesh" mesh="galahad-upperarm_L" pos="0.166 0 -0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+              <body name="forearm_L" pos="0.046 0 0" quat="1 0 0 0">
+                <joint name="elbow_L" type="hinge" axis="0 0 1" ref="0" range="-2.0943951023931953 1.5707963267948966" limited="true" />
+                <inertial pos="0.0179999999999999 1.2030353198054614e-18 0" mass="0.030643199999999978" fullinertia="1.1542272000001695e-6 3.8099711999996604e-6 3.96318719999949e-6 -1.1059455573558844e-21 2.831220626831054e-20 1.548323780298233e-21" />
+                <geom name="forearm_L" type="mesh" mesh="galahad-forearm_L" pos="0.12 0 -0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+                <body name="hand_L" pos="0.036000000000000004 0 0" quat="1 0 0 0">
+                  <joint name="wrist_L" type="hinge" axis="0 0 1" ref="0" range="-1.5707963267948966 1.5707963267948966" limited="true" />
+                  <inertial pos="0.014547770700636994 -0.0014331210191082776 -6.7886248639500064e-18" mass="0.03516800000000002" fullinertia="3.73905603397013e-6 4.694493078556425e-6 4.4766637791935105e-6 6.779923566878917e-7 6.654155203348892e-20 1.4603704289728955e-21" />
+                  <geom name="hand_L" type="mesh" mesh="galahad-hand_L" pos="0.084 0 -0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+                  <body name="jaw_L" pos="0.024 0 0" quat="0 0 -0.7071067811865475 0.7071067811865476">
+                    <joint name="gripper_L" type="hinge" axis="0 0 1" ref="0" range="0 0.7853981633974483" limited="true" />
+                    <inertial pos="-0.004000000000000092 2.842170943040401e-17 -0.008999999999999985" mass="0.009520000000000004" fullinertia="3.966666666665884e-7 4.7282666666673405e-7 2.3482666666665185e-7 5.699694156646728e-20 7.12461769580841e-21 -1.5832483768463133e-21" />
+                    <geom name="jaw_L" type="mesh" mesh="galahad-jaw_L" pos="-0.06 0.078 0" quat="0 0.7071067811865475 0 0.7071067811865476" rgba="0.13333334028720856 0.14509804546833038 0.16862745583057404 1" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+          <body name="shoulder_R" pos="-0.1 0 -0.046" quat="0.7071067811865476 0 -0.7071067811865475 0">
+            <joint name="shoulder_yaw_R" type="hinge" axis="0 0 1" ref="0" range="-1.3962634015954636 1.3962634015954636" limited="true" />
+            <inertial pos="-0.013287671232876724 8.518859166588723e-19 7.008092736264e-17" mass="0.05010719999999999" fullinertia="6.070979199998754e-6 1.1984058191779553e-5 1.30960261917808e-5 -1.250162346450162e-21 -2.269764978610847e-19 5.975986520449357e-22" />
+            <geom name="shoulder_R" type="mesh" mesh="galahad-shoulder_R" pos="0.046 0 -0.17" quat="0.7071067811865476 0 0 -0.7071067811865475" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+            <body name="upperarm_R" pos="-0.032 0 -0.004" quat="0.7071067811865476 0 0.7071067811865475 0">
+              <joint name="shoulder_pitch_R" type="hinge" axis="0 0 1" ref="0" range="-1.7453292519943295 1.6580627893946132" limited="true" />
+              <inertial pos="0.02299999999999997 -2.766400059069564e-18 0" mass="0.04471199999999996" fullinertia="2.414448000000134e-6 9.091440000000134e-6 9.09144e-6 -3.266904968768355e-21 0 1.6152625903487204e-21" />
+              <geom name="upperarm_R" type="mesh" mesh="galahad-upperarm_R" pos="0.166 0 0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+              <body name="forearm_R" pos="0.046 0 0" quat="1 0 0 0">
+                <joint name="elbow_R" type="hinge" axis="0 0 1" ref="0" range="-2.0943951023931953 1.5707963267948966" limited="true" />
+                <inertial pos="0.0179999999999999 -2.2556912246352387e-18 0" mass="0.030643199999999995" fullinertia="1.1542272000000564e-6 3.80997119999932e-6 3.963187199999263e-6 3.068998921662575e-21 2.831220626831054e-19 4.9491063691675655e-21" />
+                <geom name="forearm_R" type="mesh" mesh="galahad-forearm_R" pos="0.12 0 0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+                <body name="hand_R" pos="0.036000000000000004 0 0" quat="1 0 0 0">
+                  <joint name="wrist_R" type="hinge" axis="0 0 1" ref="0" range="-1.5707963267948966 1.5707963267948966" limited="true" />
+                  <inertial pos="0.014547770700636922 -0.0014331210191082806 4.5257499093e-18" mass="0.035167999999999984" fullinertia="3.7390560339702877e-6 4.694493078556203e-6 4.4766637791931335e-6 6.779923566878991e-7 5.309502623832907e-21 2.7832391621414443e-21" />
+                  <geom name="hand_R" type="mesh" mesh="galahad-hand_R" pos="0.084 0 0.078" quat="-0.5 -0.5 0.5 0.5" rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1" />
+                  <body name="jaw_R" pos="0.024 0 0" quat="0 0 -0.7071067811865475 0.7071067811865476">
+                    <joint name="gripper_R" type="hinge" axis="0 0 1" ref="0" range="0 0.7853981633974483" limited="true" />
+                    <inertial pos="-0.003999999999999978 2.842170943040401e-17 -0.009000000000000005" mass="0.009519999999999994" fullinertia="3.966666666666483e-7 4.728266666666799e-7 2.348266666666645e-7 -6.332993507385253e-21 0 -1.5832483768463133e-21" />
+                    <geom name="jaw_R" type="mesh" mesh="galahad-jaw_R" pos="-0.06 -0.078 0" quat="0 0.7071067811865475 0 0.7071067811865476" rgba="0.13333334028720856 0.14509804546833038 0.16862745583057404 1" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <weld body1="base_link" body2="rear_panel" />
+  </equality>
+  <actuator>
+    <position name="tread_L_drive" joint="tread_L_drive" kp="1000" dampratio="1" forcerange="-0.1570 0.1570" forcelimited="true" />
+    <position name="tread_R_drive" joint="tread_R_drive" kp="1000" dampratio="1" forcerange="-0.1570 0.1570" forcelimited="true" />
+    <position name="waist_yaw" joint="waist_yaw" kp="1000" dampratio="1" ctrlrange="-1.5707963267948966 1.5707963267948966" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="waist_pitch" joint="waist_pitch" kp="1000" dampratio="1" ctrlrange="-0.3490658503988659 0.3490658503988659" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="head_pan" joint="head_pan" kp="1000" dampratio="1" ctrlrange="-1.3962634015954636 1.3962634015954636" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+    <position name="head_tilt" joint="head_tilt" kp="1000" dampratio="1" ctrlrange="-0.4363323129985824 0.6108652381980153" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+    <position name="shoulder_yaw_L" joint="shoulder_yaw_L" kp="1000" dampratio="1" ctrlrange="-1.3962634015954636 1.3962634015954636" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="shoulder_pitch_L" joint="shoulder_pitch_L" kp="1000" dampratio="1" ctrlrange="-1.7453292519943295 1.6580627893946132" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="elbow_L" joint="elbow_L" kp="1000" dampratio="1" ctrlrange="-2.0943951023931953 1.5707963267948966" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="wrist_L" joint="wrist_L" kp="1000" dampratio="1" ctrlrange="-1.5707963267948966 1.5707963267948966" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+    <position name="gripper_L" joint="gripper_L" kp="1000" dampratio="1" ctrlrange="0 0.7853981633974483" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+    <position name="shoulder_yaw_R" joint="shoulder_yaw_R" kp="1000" dampratio="1" ctrlrange="-1.3962634015954636 1.3962634015954636" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="shoulder_pitch_R" joint="shoulder_pitch_R" kp="1000" dampratio="1" ctrlrange="-1.7453292519943295 1.6580627893946132" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="elbow_R" joint="elbow_R" kp="1000" dampratio="1" ctrlrange="-2.0943951023931953 1.5707963267948966" ctrllimited="true" forcerange="-0.9300 0.9300" forcelimited="true" />
+    <position name="wrist_R" joint="wrist_R" kp="1000" dampratio="1" ctrlrange="-1.5707963267948966 1.5707963267948966" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+    <position name="gripper_R" joint="gripper_R" kp="1000" dampratio="1" ctrlrange="0 0.7853981633974483" ctrllimited="true" forcerange="-0.5200 0.5200" forcelimited="true" />
+  </actuator>
+  <keyframe>
+    <key name="design" qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+  </keyframe>
+</mujoco>

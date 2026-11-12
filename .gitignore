@@ -34,3 +34,8 @@ desktop.ini
 # Source artwork is not redistributed (see LICENSE)
 reference/
 
+
+# Polykrom CLI binary (452 MB, built by .github/workflows/build-polykrom-cli.yml)
+tools/bin/
+design/*.bak
+

@@ -10,10 +10,11 @@ This repository is the **design and engineering source of truth**: the CAD model
 the joint map, the URDF, the bill of materials and the build notes. Firmware and
 the full ROS 2 control stack come next on the roadmap.
 
-> **Status: M1 — CAD and kinematics.** The model, materials, rig, URDF and
-> documentation exist and are reproducible. Nothing here has been physically
-> built, printed, powered or measured yet. Every number marked *estimate* still
-> needs a bench result behind it.
+> **Status: M1 — CAD, kinematics and simulation model.** The Blender model, the
+> Polykrom parametric model, MJCF/URDF exports, materials, rig and docs exist and
+> are reproducible; the MJCF loads and settles in MuJoCo. Nothing has been
+> physically built, printed, powered or measured. Every number marked *estimate*
+> still needs a bench result behind it.
 
 ---
 
@@ -31,6 +32,23 @@ the full ROS 2 control stack come next on the roadmap.
 - Chest display reads `LAN / A 82% B 79%`; head carries the camera, ToF imager,
   status LED and brass side bosses
 - Rear service bay with two battery cartridges and an orange latch plate
+
+## Simulation-ready model (Polykrom → MuJoCo)
+
+The physics model is built in [Polykrom](https://github.com/WCKDai/polykrom), the
+Rust parametric CAD, and exported straight to MJCF and URDF — 18 links, 16 moving
+joints, 1.259 kg, with per-joint actuator limits from the DYNAMIXEL datasheets.
+
+![Simulation model](docs/preview_sim.png)
+
+```bash
+python tools/build_sim_model.py     # CAD -> MJCF + URDF -> MuJoCo check
+```
+
+Validated in MuJoCo 3.17: loads, no massless links, settles on its tracks with
+2.2° tilt, 10 contacts, 0.39 N peak contact force. Details, mass table and the
+honest list of limitations (rigid track approximation, box visuals, no sensors
+yet) are in [docs/SIM2REAL.md](docs/SIM2REAL.md).
 
 ## Parked envelope
 
@@ -75,17 +93,27 @@ blender/                 CAD source and build scripts
   galahad.blend          full scene: geometry, materials, rig, studio
   galahad.glb            portable export (1.9 M tris, materials)
   scripts/               reproducible build + render pipeline
+design/                  Polykrom simulation model
+  galahad.polykrom       parametric source (18 components, 16 joints)
+  galahad.mjcf           MuJoCo model + per-link STLs
+  galahad.urdf           ROS / Isaac / PyBullet description + STLs
 docs/
+  SIM2REAL.md            sim model, mass table, validation, limitations
   SPECIFICATION.md       dimensions, joints, mass/power budgets
   BOM.md                 sourced bill of materials and price anchors
   ROADMAP.md             milestone plan and current status
   MODEL_NOTES.md         how the model was built, and where it deviates
   joint_map.json         machine-readable rig export (frames, parts, bounds)
+  mujoco_report.json     result of the MuJoCo check
   images/                turnaround + hero renders
 ros2_ws/src/
   galahad_description/   URDF, xacro, launch, RViz config, joint limits
 tools/
-  gen_urdf.py            joint map -> URDF generator
+  build_polykrom.py      parametric design -> Polykrom command script
+  build_sim_model.py     one-command rebuild: CAD -> MJCF/URDF -> MuJoCo check
+  patch_mjcf.py          per-joint actuator limits from the datasheets
+  mujoco_check.py        loads the MJCF and reports physics results
+  gen_urdf.py            rig joint map -> URDF
   blender_bridge_addon.py main-thread-safe Blender socket bridge
 ```
 
@@ -125,6 +153,7 @@ Being explicit matters more than looking finished.
 | Geometry, part names, hierarchy | Modelled from the supplied reference mesh |
 | Materials and colour scheme | Modelled from the six reference renders |
 | Joint positions | Modelled; pivots placed from the geometry |
+| MJCF / URDF kinematics, inertial tensors | Exported from CAD and checked in MuJoCo |
 | Joint limits | Design targets, not measured |
 | Link masses / inertia | Engineering estimates summing to 1.25 kg — unverified |
 | Actuator torque, current, speed | Manufacturer figures, not bench-verified |

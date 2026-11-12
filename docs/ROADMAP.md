@@ -16,6 +16,8 @@ what exists, what has actually been run, and what is still open.
 - [x] Full 93-part CAD scene with materials and subsystem collections
 - [x] 18-bone armature, rigid skinning, parked pose preserved
 - [x] URDF generated from the rig (18 links, 14 revolute, 2 tread, 1 fixed)
+- [x] Polykrom parametric model exported to MJCF + URDF (18 links, 16 moving joints)
+- [x] MuJoCo load, mass and settle check recorded in `docs/mujoco_report.json`
 - [x] Turnaround and hero renders
 - [x] Parked envelope measured: 194.6 × 186.1 × 240.0 mm
 - [ ] Mass and inertia measured from the first print set

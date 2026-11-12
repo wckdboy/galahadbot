@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<!-- Exported by Polykrom; units: m, kg, rad -->
+<robot name="galahad">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.014803559683337164 5.498723287641139e-19 0.028541766053046577" rpy="0 0 0"/>
+      <mass value="0.4038111999999999"/>
+      <inertia ixx="2.6178691825712243e-4" ixy="-7.300872063294368e-21" ixz="1.8889714683804695e-5" iyy="4.883571596682911e-4" iyz="4.65342919199653e-21" izz="6.332994552778354e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="galahad-base.stl"/></geometry>
+      <material name="base_link_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="galahad-base.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="rear_panel">
+    <inertial>
+      <origin xyz="-0.06299999999999999 -4.909553046007711e-18 0.017999999999999995" rpy="0 0 0"/>
+      <mass value="0.004742399999999997"/>
+      <inertia ixx="2.5498304e-6" ixy="-1.1641532182693512e-22" ixz="1.4901161193847657e-21" iyy="2.8138240000001564e-7" iyz="2.0954757928848264e-22" izz="2.296902400000014e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="galahad-rear_panel.stl"/></geometry>
+      <material name="rear_panel_color"><color rgba="0.16470588743686676 0.20000000298023224 0.27450981736183167 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="galahad-rear_panel.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="tread_L">
+    <inertial>
+      <origin xyz="1.4210854715202006e-16 0.04250000000000064 0.0029868706632391806" rpy="0 0 0"/>
+      <mass value="0.017889910575127364"/>
+      <inertia ixx="2.099683528081824e-5" ixy="1.983571537547267e-10" ixz="1.8596649169921873e-19" iyy="2.6723442072826335e-6" iyz="-9.25536224917331e-20" izz="2.246121794013947e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0195 0.0425 -0.052000000000000005" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-tread_L.stl"/></geometry>
+      <material name="tread_L_color"><color rgba="0.0784313753247261 0.08235294371843338 0.0941176488995552 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0195 0.0425 -0.052000000000000005" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-tread_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="tread_R">
+    <inertial>
+      <origin xyz="2.1316282072803006e-17 0.04250000000000026 0.002986870663239856" rpy="0 0 0"/>
+      <mass value="0.017889910575127514"/>
+      <inertia ixx="2.0996835280819033e-5" ixy="1.9835715384860754e-10" ixz="2.5033950805664058e-20" iyy="2.672344207282673e-6" iyz="-5.666993020413266e-20" izz="2.2461217940140016e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0195 0.0425 0.052000000000000005" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-tread_R.stl"/></geometry>
+      <material name="tread_R_color"><color rgba="0.0784313753247261 0.08235294371843338 0.0941176488995552 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0195 0.0425 0.052000000000000005" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-tread_R.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="waist">
+    <inertial>
+      <origin xyz="-7.287569506481156e-18 -1.7056714334742097e-18 0.007760045530499834" rpy="0 0 0"/>
+      <mass value="0.06646229045602617"/>
+      <inertia ixx="2.0597229686421967e-5" ixy="-4.769576444800809e-10" ixz="-5.2462771290834453e-20" iyy="2.0597572062645504e-5" iyz="-4.602560966388627e-21" izz="2.6353424140666185e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.051500000000000004" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-waist.stl"/></geometry>
+      <material name="waist_color"><color rgba="0.7882353067398071 0.6274510025978088 0.3137255012989044 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.051500000000000004" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-waist.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="torso">
+    <inertial>
+      <origin xyz="-0.06345104759269206 -0.002603223935244563 3.5816977510788134e-19" rpy="0 0 0"/>
+      <mass value="0.3006512000000002"/>
+      <inertia ixx="3.9595509584043745e-4" ixy="-6.698598008589324e-6" ixz="1.5524888990535382e-20" iyy="3.7153556767138807e-4" iyz="1.978131227649141e-21" izz="5.289426069784923e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.07 0 0" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-torso.stl"/></geometry>
+      <material name="torso_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.07 0 0" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-torso.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="neck">
+    <inertial>
+      <origin xyz="-2.112298549264712e-17 -1.745161247845762e-17 -5.996980689815245e-14" rpy="0 0 0"/>
+      <mass value="0.009585333376661466"/>
+      <inertia ixx="5.614055434165674e-7" ixy="5.268100540171245e-12" ixz="-2.2815484896897625e-20" iyy="5.614017617969776e-7" iyz="-4.540461233658695e-20" izz="8.096864145629806e-7"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.191" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-neck.stl"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.191" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-neck.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="shoulder_L">
+    <inertial>
+      <origin xyz="0.013287671232876708 -1.171343135405949e-18 2.336030912088001e-17" rpy="0 0 0"/>
+      <mass value="0.05010720000000001"/>
+      <inertia ixx="6.070979200000298e-6" ixy="-1.4308453048473067e-21" ixz="-1.722507215462216e-20" iyy="1.1984058191781284e-5" iyz="-3.318806799749534e-21" izz="1.3096026191780994e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.046 0 -0.17" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-shoulder_L.stl"/></geometry>
+      <material name="shoulder_L_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="-0.046 0 -0.17" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-shoulder_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="shoulder_R">
+    <inertial>
+      <origin xyz="-0.013287671232876724 8.518859166588723e-19 7.008092736264e-17" rpy="0 0 0"/>
+      <mass value="0.05010719999999999"/>
+      <inertia ixx="6.070979199998754e-6" ixy="-1.250162346450162e-21" ixz="-2.269764978610847e-19" iyy="1.1984058191779553e-5" iyz="5.975986520449357e-22" izz="1.30960261917808e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.046 0 -0.17" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-shoulder_R.stl"/></geometry>
+      <material name="shoulder_R_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.046 0 -0.17" rpy="0 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-shoulder_R.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="head">
+    <inertial>
+      <origin xyz="-0.017227283484584893 -0.002610964436817978 2.0271301472082098e-4" rpy="0 0 0"/>
+      <mass value="0.09788638632585543"/>
+      <inertia ixx="1.1107725313276045e-4" ixy="-7.086449909540353e-7" ixz="5.5017910874618065e-8" iyy="8.51525269488403e-5" iyz="7.121405509389468e-7" izz="4.8388870144773236e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.2 0 0" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-head.stl"/></geometry>
+      <material name="head_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.2 0 0" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-head.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="upperarm_L">
+    <inertial>
+      <origin xyz="0.022999999999999715 2.766400059069565e-18 9.947598300641403e-17" rpy="0 0 0"/>
+      <mass value="0.04471199999999993"/>
+      <inertia ixx="2.4144479999994636e-6" ixy="-5.114998202770982e-21" ixz="-9.834766387939454e-19" iyy="9.091439999996781e-6" iyz="2.3137545213103406e-21" izz="9.091439999997318e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.166 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-upperarm_L.stl"/></geometry>
+      <material name="upperarm_L_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.166 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-upperarm_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="upperarm_R">
+    <inertial>
+      <origin xyz="0.02299999999999997 -2.766400059069564e-18 0" rpy="0 0 0"/>
+      <mass value="0.04471199999999996"/>
+      <inertia ixx="2.414448000000134e-6" ixy="-3.266904968768355e-21" ixz="0" iyy="9.091440000000134e-6" iyz="1.6152625903487204e-21" izz="9.09144e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.166 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-upperarm_R.stl"/></geometry>
+      <material name="upperarm_R_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.166 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-upperarm_R.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="forearm_L">
+    <inertial>
+      <origin xyz="0.0179999999999999 1.2030353198054614e-18 0" rpy="0 0 0"/>
+      <mass value="0.030643199999999978"/>
+      <inertia ixx="1.1542272000001695e-6" ixy="-1.1059455573558844e-21" ixz="2.831220626831054e-20" iyy="3.8099711999996604e-6" iyz="1.548323780298233e-21" izz="3.96318719999949e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.12 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-forearm_L.stl"/></geometry>
+      <material name="forearm_L_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.12 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-forearm_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="forearm_R">
+    <inertial>
+      <origin xyz="0.0179999999999999 -2.2556912246352387e-18 0" rpy="0 0 0"/>
+      <mass value="0.030643199999999995"/>
+      <inertia ixx="1.1542272000000564e-6" ixy="3.068998921662575e-21" ixz="2.831220626831054e-19" iyy="3.80997119999932e-6" iyz="4.9491063691675655e-21" izz="3.963187199999263e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.12 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-forearm_R.stl"/></geometry>
+      <material name="forearm_R_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.12 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-forearm_R.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="hand_L">
+    <inertial>
+      <origin xyz="0.014547770700636994 -0.0014331210191082776 -6.7886248639500064e-18" rpy="0 0 0"/>
+      <mass value="0.03516800000000002"/>
+      <inertia ixx="3.73905603397013e-6" ixy="6.779923566878917e-7" ixz="6.654155203348892e-20" iyy="4.694493078556425e-6" iyz="1.4603704289728955e-21" izz="4.4766637791935105e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.084 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-hand_L.stl"/></geometry>
+      <material name="hand_L_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.084 0 -0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-hand_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="hand_R">
+    <inertial>
+      <origin xyz="0.014547770700636922 -0.0014331210191082806 4.5257499093e-18" rpy="0 0 0"/>
+      <mass value="0.035167999999999984"/>
+      <inertia ixx="3.7390560339702877e-6" ixy="6.779923566878991e-7" ixz="5.309502623832907e-21" iyy="4.694493078556203e-6" iyz="2.7832391621414443e-21" izz="4.4766637791931335e-6"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.084 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-hand_R.stl"/></geometry>
+      <material name="hand_R_color"><color rgba="0.929411768913269 0.8941176533699036 0.8196078538894653 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.084 0 0.078" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <geometry><mesh filename="galahad-hand_R.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="jaw_L">
+    <inertial>
+      <origin xyz="-0.004000000000000092 2.842170943040401e-17 -0.008999999999999985" rpy="0 0 0"/>
+      <mass value="0.009520000000000004"/>
+      <inertia ixx="3.966666666665884e-7" ixy="5.699694156646728e-20" ixz="7.12461769580841e-21" iyy="4.7282666666673405e-7" iyz="-1.5832483768463133e-21" izz="2.3482666666665185e-7"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.06 0.078 0" rpy="0 -1.5707963267948966 -3.141592653589793"/>
+      <geometry><mesh filename="galahad-jaw_L.stl"/></geometry>
+      <material name="jaw_L_color"><color rgba="0.13333334028720856 0.14509804546833038 0.16862745583057404 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 0.078 0" rpy="0 -1.5707963267948966 -3.141592653589793"/>
+      <geometry><mesh filename="galahad-jaw_L.stl"/></geometry>
+    </collision>
+  </link>
+  <link name="jaw_R">
+    <inertial>
+      <origin xyz="-0.003999999999999978 2.842170943040401e-17 -0.009000000000000005" rpy="0 0 0"/>
+      <mass value="0.009519999999999994"/>
+      <inertia ixx="3.966666666666483e-7" ixy="-6.332993507385253e-21" ixz="0" iyy="4.728266666666799e-7" iyz="-1.5832483768463133e-21" izz="2.348266666666645e-7"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.06 -0.078 0" rpy="0 -1.5707963267948966 -3.141592653589793"/>
+      <geometry><mesh filename="galahad-jaw_R.stl"/></geometry>
+      <material name="jaw_R_color"><color rgba="0.13333334028720856 0.14509804546833038 0.16862745583057404 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -0.078 0" rpy="0 -1.5707963267948966 -3.141592653589793"/>
+      <geometry><mesh filename="galahad-jaw_R.stl"/></geometry>
+    </collision>
+  </link>
+  <joint name="rear_panel_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_panel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="tread_L_drive" type="continuous">
+    <parent link="base_link"/>
+    <child link="tread_L"/>
+    <origin xyz="0.0425 0.052000000000000005 0.0195" rpy="0 1.5707963267948966 1.5707963267948966"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1" velocity="3"/>
+  </joint>
+  <joint name="tread_R_drive" type="continuous">
+    <parent link="base_link"/>
+    <child link="tread_R"/>
+    <origin xyz="0.0425 -0.052000000000000005 0.0195" rpy="0 1.5707963267948966 1.5707963267948966"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1" velocity="3"/>
+  </joint>
+  <joint name="waist_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="waist"/>
+    <origin xyz="0 0 0.051500000000000004" rpy="0 0 1.5707963267948966"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="3"/>
+  </joint>
+  <joint name="waist_pitch" type="revolute">
+    <parent link="waist"/>
+    <child link="torso"/>
+    <origin xyz="0 0 0.0185" rpy="0 1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1" velocity="3"/>
+  </joint>
+  <joint name="head_pan" type="revolute">
+    <parent link="torso"/>
+    <child link="neck"/>
+    <origin xyz="-0.121 0 0" rpy="0 -1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.3962634015954636" upper="1.3962634015954636" effort="1" velocity="3"/>
+  </joint>
+  <joint name="shoulder_yaw_L" type="revolute">
+    <parent link="torso"/>
+    <child link="shoulder_L"/>
+    <origin xyz="-0.1 0 0.046" rpy="0 -1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.3962634015954636" upper="1.3962634015954636" effort="1" velocity="3"/>
+  </joint>
+  <joint name="shoulder_yaw_R" type="revolute">
+    <parent link="torso"/>
+    <child link="shoulder_R"/>
+    <origin xyz="-0.1 0 -0.046" rpy="0 -1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.3962634015954636" upper="1.3962634015954636" effort="1" velocity="3"/>
+  </joint>
+  <joint name="head_tilt" type="revolute">
+    <parent link="neck"/>
+    <child link="head"/>
+    <origin xyz="0 0 0.009000000000000001" rpy="0 1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.4363323129985824" upper="0.6108652381980153" effort="1" velocity="3"/>
+  </joint>
+  <joint name="shoulder_pitch_L" type="revolute">
+    <parent link="shoulder_L"/>
+    <child link="upperarm_L"/>
+    <origin xyz="0.032 0 -0.004" rpy="0 1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.7453292519943295" upper="1.6580627893946132" effort="1" velocity="3"/>
+  </joint>
+  <joint name="shoulder_pitch_R" type="revolute">
+    <parent link="shoulder_R"/>
+    <child link="upperarm_R"/>
+    <origin xyz="-0.032 0 -0.004" rpy="0 1.5707963267948966 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.7453292519943295" upper="1.6580627893946132" effort="1" velocity="3"/>
+  </joint>
+  <joint name="elbow_L" type="revolute">
+    <parent link="upperarm_L"/>
+    <child link="forearm_L"/>
+    <origin xyz="0.046 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.0943951023931953" upper="1.5707963267948966" effort="1" velocity="3"/>
+  </joint>
+  <joint name="elbow_R" type="revolute">
+    <parent link="upperarm_R"/>
+    <child link="forearm_R"/>
+    <origin xyz="0.046 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.0943951023931953" upper="1.5707963267948966" effort="1" velocity="3"/>
+  </joint>
+  <joint name="wrist_L" type="revolute">
+    <parent link="forearm_L"/>
+    <child link="hand_L"/>
+    <origin xyz="0.036000000000000004 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="3"/>
+  </joint>
+  <joint name="wrist_R" type="revolute">
+    <parent link="forearm_R"/>
+    <child link="hand_R"/>
+    <origin xyz="0.036000000000000004 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="3"/>
+  </joint>
+  <joint name="gripper_L" type="revolute">
+    <parent link="hand_L"/>
+    <child link="jaw_L"/>
+    <origin xyz="0.024 0 0" rpy="-1.5707963267948966 0 3.141592653589793"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.7853981633974483" effort="1" velocity="3"/>
+  </joint>
+  <joint name="gripper_R" type="revolute">
+    <parent link="hand_R"/>
+    <child link="jaw_R"/>
+    <origin xyz="0.024 0 0" rpy="-1.5707963267948966 0 3.141592653589793"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.7853981633974483" effort="1" velocity="3"/>
+  </joint>
+</robot>

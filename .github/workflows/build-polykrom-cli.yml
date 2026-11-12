@@ -44,7 +44,7 @@ jobs:
 
       - name: Build polykrom-cli
         working-directory: polykrom
-        run: cargo build --release --target x86_64-pc-windows-gnu -p solidcraft-cli --bin polykrom-cli
+        run: cargo build --release --target x86_64-pc-windows-gnu -p polykrom-cli --bin polykrom-cli
 
       - name: Report binary
         working-directory: polykrom
